@@ -20,3 +20,20 @@ const routeConstants : Routes = [
 <router-outlet></router-outlet>
 RouterModule.forRoot(routeConstants) 
 <a routerLink="login" routerLinkActive="active">Login</a>
+
+### 2.2 Passing route parameters
+{ path: 'details/:id/:name', component: DetailsComponent }
+this.activatedRoutes.params.subscribe(parameters => {
+    this.id = parameters.id;
+    this.name = parameters.name;
+    this.foo = parameters.foo;
+    this.me = parameters.me;
+});
+<a [routerLink]="['details', '1', 'kiran']">child 1</a>
+<a [routerLink]="['details', '1', 'kiran', {foo: 'test', me: 'test2'}]">child 1 with optional params</a>
+navigate() {
+    this.router.navigate(['details', '2', 'mama']);
+}
+navigateOptional() {
+    this.router.navigate(['details', '2', 'mama', {foo: 'test 2', me: 'kkk 2'}]);
+}

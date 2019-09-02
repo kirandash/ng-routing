@@ -2,6 +2,10 @@
   <li><a routerLink="login" routerLinkActive="active">Login</a></li>
   <li><a routerLink="reset-password" routerLinkActive="active">Reset password</a></li>
   <li><a routerLink="test" routerLinkActive="active">Test</a></li>
+  <li><a [routerLink]="['details', '1', 'kiran']" routerLinkActive="active">child 1</a></li>
+  <li><a [routerLink]="['details', '1', 'kiran', {foo: 'test', me: 'test2'}]" routerLinkActive="active">child 1 with optional params</a></li><!--anything in an object is optional-->
+  <li><a routerLinkActive="active" (click)="navigate()">child 2</a></li>
+  <li><a routerLinkActive="active" (click)="navigateOptional()">child 2 with optional</a></li>
 </ul>
 <!-- Placeholder for loading routing components -->
 <router-outlet></router-outlet>
