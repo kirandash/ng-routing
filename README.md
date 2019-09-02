@@ -1,27 +1,22 @@
-# NgRouting
+# Angular Routing
+## 1. Routing - Basics 
+### 1.1 Intro
+What is routing?
+1. A way to load and manage your application
+2. Map app function to the URL
+3. Logical way to structure your application
+Things to do:
+1. Passing data
+2. Route guards
+3. Lazy loading
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 2. Router - Setup
+const routeConstants : Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: '**', component: NotFoundComponent }
+];
+<router-outlet></router-outlet>
+RouterModule.forRoot(routeConstants) 
+<a routerLink="login" routerLinkActive="active">Login</a>
